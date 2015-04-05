@@ -8,14 +8,16 @@ function CameraList() {
     75, window.innerWidth / window.innerHeight, 0.1, 1000
   );
   playerFollowCamera.position.y = 10;
-  playerFollowCamera.position.z = 20;
+  playerFollowCamera.position.z = -20;
+  playerFollowCamera.rotation.y = Math.PI
   cameras.push({camera: playerFollowCamera, name: 'player_follow'});
 
   var playerHoverCamera = new THREE.PerspectiveCamera(
     75, window.innerWidth / window.innerHeight, 0.1, 1000
   );
   playerHoverCamera.position.y = 20;
-  playerHoverCamera.rotation.x = -Math.PI / 2;
+  playerHoverCamera.rotation.x = Math.PI / 2;
+  playerHoverCamera.rotation.y = Math.PI
   cameras.push({camera: playerHoverCamera, name: 'player_hover'});
 
   // npc cameras
@@ -23,14 +25,16 @@ function CameraList() {
     75, window.innerWidth / window.innerHeight, 0.1, 1000
   );
   npcFollowCamera.position.y = 10;
-  npcFollowCamera.position.z = 20;
+  npcFollowCamera.position.z = -20;
+  npcFollowCamera.rotation.y = Math.PI
   cameras.push({camera: npcFollowCamera, name: 'npc_follow'});
 
   var npcHoverCamera = new THREE.PerspectiveCamera(
     75, window.innerWidth / window.innerHeight, 0.1, 1000
   );
   npcHoverCamera.position.y = 20;
-  npcHoverCamera.rotation.x = -Math.PI / 2;
+  npcHoverCamera.rotation.x = Math.PI / 2;
+  npcHoverCamera.rotation.y = Math.PI
   cameras.push({camera: npcHoverCamera, name: 'npc_hover'});
 
   this.cameras = cameras;
