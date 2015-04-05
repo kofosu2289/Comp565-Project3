@@ -1,19 +1,23 @@
-var GameComponents = (function() {
+var Components = (function() {
   var components = [];
   var componentsHelpers = {
-    add: function add(obj3D) {
-      components.push(obj3D);
+    add: function add(object) {
+      components.push(object);
     },
     update: function update(gameTime) {
       var component;
 
       for (var i = 0; i < components.length; i++) {
         component = components[i];
-
         if (component.update !== undefined) {
-          components[i].update(gameTime);
+          component.update(gameTime);
         }
       }
+    },
+    collidable: function collidable() {
+      return components.filter(function(component) {
+        return component.isCollidable;
+      });
     }
   }
 
