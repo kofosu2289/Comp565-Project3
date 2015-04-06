@@ -1,5 +1,5 @@
 // Globals 
-//accessible by all js files loaded in index.html after stage.js
+//accessible by all js files loaded in index.html after game.js
 var Game = {};
 var scene = new THREE.Scene();
 var renderer = new THREE.WebGLRenderer();
